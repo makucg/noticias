@@ -6,11 +6,13 @@ const ListadoNoticias = ({ noticias }) => {
     return ( 
         <div className="row">
             {
-                /*noticias.map(noticia => (
-                    <Noticia noticia={noticia} />
-                ))*/
+                noticias.map(noticia => (
+                    <Noticia 
+                        key={noticia.url}
+                        noticia={noticia}
+                    />
+                ))
             }
-            noticia
         </div>
      );
 }

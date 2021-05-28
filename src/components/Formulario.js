@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react';  
 import styles from './Formulario.module.css';
 import useSelect from '../hooks/useSelect';
 
-const Formulario = ({ guardarCategoria }) => {
+const Formulario = ({guardarCategoria}) => {
 
     const OPCIONES = [
         { value: 'general', label: 'General'},
@@ -12,10 +12,12 @@ const Formulario = ({ guardarCategoria }) => {
         { value: 'science', label: 'Ciencia'},
         { value: 'sports', label: 'Deportes'},
         { value: 'technology', label: 'Tecnología'},
-    ];
+    ]
 
-    const [categoria, SelectNoticias] = useSelect('health', OPCIONES);
+    // utilizar custom hook
+    const [ categoria, SelectNoticias ] = useSelect('general', OPCIONES);
 
+    // submit al form, pasar categoria a app.js
     const buscarNoticias = e => {
         e.preventDefault();
 
